@@ -11,6 +11,6 @@ public class kafkaConfiguration {
     @Bean
     public NewTopic getNewTopic()
     {
-        return TopicBuilder.name("fruits").partitions(3).replicas(3).build();
+        return TopicBuilder.name("Users").partitions(3).replicas(1).build();
     }
 }
