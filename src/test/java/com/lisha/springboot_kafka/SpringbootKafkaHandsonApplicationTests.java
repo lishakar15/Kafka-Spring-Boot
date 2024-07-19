@@ -1,6 +1,7 @@
 package com.lisha.springboot_kafka;
 
 import com.lisha.springboot_kafka.kafka.KafkaProducer;
+import com.lisha.springboot_kafka.model.Address;
 import com.lisha.springboot_kafka.model.User;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -21,6 +22,17 @@ class SpringbootKafkaHandsonApplicationTests {
 				.country("US")
 				.build();
 		kafkaProducer.sendMessage(user);
+	}
+
+	@Test
+	public void testSendMessage1()
+	{
+		Address address = Address.builder()
+				.id(10L)
+				.street("Park Street")
+				.zipCode("2541")
+				.build();
+		kafkaProducer.sendMessageUsingMessageBuilder(address);
 	}
 
 
