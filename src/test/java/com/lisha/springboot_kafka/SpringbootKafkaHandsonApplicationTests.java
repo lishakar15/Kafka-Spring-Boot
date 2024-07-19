@@ -17,8 +17,8 @@ class SpringbootKafkaHandsonApplicationTests {
 	{
 		User user = User.builder()
 				.userId(101L)
-				.userName("Lisha")
-				.country("India")
+				.userName("Rambo")
+				.country("US")
 				.build();
 		kafkaProducer.sendMessage(user);
 	}
